@@ -1,0 +1,7 @@
+# Godot 4 4.x .gitignore
+.godot/
+*.translation
+
+# OS metadata
+.DS_Store
+Thumbs.db
