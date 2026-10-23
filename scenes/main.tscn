@@ -1,7 +1,127 @@
-[gd_scene load_steps=3 format=3 uid="uid://c6f3q4x5k7n1"]
+[gd_scene load_steps=18 format=3 uid="uid://c6f3q4x5k7n1"]
 
-[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_gm"]
+[ext_resource type="Theme" uid="uid://df2m4k6h7n8p" path="res://themes/modern_escape_theme.tres" id="1_theme"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="2_main"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="3_gm"]
+[ext_resource type="Script" path="res://scripts/sound_manager.gd" id="4_sm"]
+[ext_resource type="AudioStream" path="res://assets/sounds/menacing_theme.wav" id="5_bgm"]
+[ext_resource type="AudioStream" path="res://assets/sounds/key_click.wav" id="6_sfx_click"]
+[ext_resource type="AudioStream" path="res://assets/sounds/enter_click.wav" id="7_sfx_enter"]
+[ext_resource type="AudioStream" path="res://assets/sounds/error_buzz.wav" id="8_sfx_error"]
+[ext_resource type="AudioStream" path="res://assets/sounds/success_jingle.wav" id="9_sfx_success"]
+[ext_resource type="AudioStream" path="res://assets/sounds/victory_fanfare.wav" id="10_sfx_victory"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_header"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0705882, 0.0862745, 0.117647, 0.98)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.207843, 0.27451, 0.380392, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_badge"]
+content_margin_left = 12.0
+content_margin_top = 4.0
+content_margin_right = 12.0
+content_margin_bottom = 4.0
+bg_color = Color(0.129412, 0.176471, 0.25098, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.266667, 0.368627, 0.521569, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_viewport_inner"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0392157, 0.0509804, 0.0705882, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.160784, 0.211765, 0.294118, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_speaker_tag"]
+content_margin_left = 10.0
+content_margin_top = 4.0
+content_margin_right = 10.0
+content_margin_bottom = 4.0
+bg_color = Color(0.105882, 0.141176, 0.2, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.258824, 0.364706, 0.513725, 1)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puzzle"]
+content_margin_left = 14.0
+content_margin_top = 10.0
+content_margin_right = 14.0
+content_margin_bottom = 10.0
+bg_color = Color(0.0627451, 0.0823529, 0.117647, 1)
+border_width_left = 2
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.85098, 0.701961, 0.25098, 0.85)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_status"]
+content_margin_left = 14.0
+content_margin_top = 8.0
+content_margin_right = 14.0
+content_margin_bottom = 8.0
+bg_color = Color(0.0470588, 0.0627451, 0.0862745, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.207843, 0.27451, 0.380392, 0.8)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_action_btn"]
+content_margin_left = 16.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(0.121569, 0.352941, 0.709804, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0.294118, 0.54902, 0.941176, 1)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -10,7 +130,254 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_theme")
 script = ExtResource("2_main")
 
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0431373, 0.054902, 0.0745098, 1)
+
+[node name="MainContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="RootLayout" type="VBoxContainer" parent="MainContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="HeaderPanel" type="PanelContainer" parent="MainContainer/RootLayout"]
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_header")
+
+[node name="HeaderHBox" type="HBoxContainer" parent="MainContainer/RootLayout/HeaderPanel"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="TitleLabel" type="Label" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.941176, 0.960784, 0.980392, 1)
+theme_override_font_sizes/font_size = 18
+text = "THE VAULT OF NEWTON"
+
+[node name="StageBadge" type="Label" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+theme_override_styles/normal = SubResource("StyleBoxFlat_badge")
+text = "MISSION BRIEFING"
+
+[node name="ProgressBar" type="ProgressBar" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(160, 10)
+layout_mode = 2
+size_flags_vertical = 4
+show_percentage = false
+
+[node name="Spacer" type="Control" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimerLabel" type="Label" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.901961, 0.921569, 0.941176, 1)
+theme_override_font_sizes/font_size = 18
+text = "TIME: 30:00"
+
+[node name="ContentSplit" type="HBoxContainer" parent="MainContainer/RootLayout"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 12
+
+[node name="LeftCard" type="PanelContainer" parent="MainContainer/RootLayout/ContentSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.05
+
+[node name="LeftVBox" type="VBoxContainer" parent="MainContainer/RootLayout/ContentSplit/LeftCard"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ViewportFrame" type="PanelContainer" parent="MainContainer/RootLayout/ContentSplit/LeftCard/LeftVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_viewport_inner")
+
+[node name="StageImage" type="TextureRect" parent="MainContainer/RootLayout/ContentSplit/LeftCard/LeftVBox/ViewportFrame"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ImageCaption" type="Label" parent="MainContainer/RootLayout/ContentSplit/LeftCard/LeftVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0.658824, 0.74902, 1)
+theme_override_font_sizes/font_size = 13
+text = "ARCHIVAL CHAMBERS"
+horizontal_alignment = 1
+
+[node name="RightCard" type="PanelContainer" parent="MainContainer/RootLayout/ContentSplit"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.15
+
+[node name="RightVBox" type="VBoxContainer" parent="MainContainer/RootLayout/ContentSplit/RightCard"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="SpeakerTag" type="Label" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.701961, 0.819608, 0.968627, 1)
+theme_override_font_sizes/font_size = 14
+theme_override_styles/normal = SubResource("StyleBoxFlat_speaker_tag")
+text = "MISSION BRIEFING // ARCHIVAL ARCHIVES"
+
+[node name="NarrativeScroll" type="ScrollContainer" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="NarrativeLabel" type="RichTextLabel" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox/NarrativeScroll"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_colors/default_color = Color(0.85098, 0.886275, 0.929412, 1)
+bbcode_enabled = true
+text = "Room narrative text will appear here."
+
+[node name="PuzzlePanel" type="PanelContainer" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_puzzle")
+
+[node name="PuzzleVBox" type="VBoxContainer" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox/PuzzlePanel"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="PuzzleHeader" type="Label" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox/PuzzlePanel/PuzzleVBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.85098, 0.701961, 0.25098, 1)
+theme_override_font_sizes/font_size = 13
+text = "CHALLENGE SPECIFICATION:"
+
+[node name="PuzzleLabel" type="RichTextLabel" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox/PuzzlePanel/PuzzleVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+text = "Puzzle question text."
+
+[node name="StatusPanel" type="PanelContainer" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_status")
+
+[node name="StatusLabel" type="RichTextLabel" parent="MainContainer/RootLayout/ContentSplit/RightCard/RightVBox/StatusPanel"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+bbcode_enabled = true
+fit_content = true
+text = "Status and hint feedback."
+
+[node name="CommandPanel" type="PanelContainer" parent="MainContainer/RootLayout"]
+custom_minimum_size = Vector2(0, 60)
+layout_mode = 2
+
+[node name="CommandHBox" type="HBoxContainer" parent="MainContainer/RootLayout/CommandPanel"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="PromptPrefix" type="Label" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(0.407843, 0.690196, 0.980392, 1)
+theme_override_font_sizes/font_size = 15
+text = "ENTER CODE > "
+
+[node name="InputLine" type="LineEdit" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Type your code or answer here..."
+clear_button_enabled = true
+
+[node name="SubmitButton" type="Button" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(90, 0)
+layout_mode = 2
+text = "Submit"
+
+[node name="HintButton" type="Button" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+text = "Hint"
+
+[node name="ActionButton" type="Button" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(140, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("StyleBoxFlat_action_btn")
+text = "Start Escape ->"
+
+[node name="RestartButton" type="Button" parent="MainContainer/RootLayout/CommandPanel/CommandHBox"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(75, 0)
+layout_mode = 2
+text = "Restart"
+
+[node name="AlertOverlay" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.8, 0.1, 0.1, 0)
+
 [node name="GameManager" type="Node" parent="."]
-script = ExtResource("1_gm")
+script = ExtResource("3_gm")
+
+[node name="SoundManager" type="Node" parent="."]
+script = ExtResource("4_sm")
+
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("5_bgm")
+
+[node name="SFXClick" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("6_sfx_click")
+
+[node name="SFXEnter" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("7_sfx_enter")
+
+[node name="SFXError" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("8_sfx_error")
+
+[node name="SFXSuccess" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("9_sfx_success")
+
+[node name="SFXVictory" type="AudioStreamPlayer" parent="SoundManager"]
+stream = ExtResource("10_sfx_victory")
