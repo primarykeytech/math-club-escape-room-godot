@@ -36,6 +36,7 @@ var timer_active: bool = false
 var total_penalties_applied: float = 0.0
 
 var hints_revealed: int = 0
+var active_stage_variants: Dictionary = {}
 
 func _ready() -> void:
 	load_game_data(data_path)
@@ -47,7 +48,41 @@ func load_game_data(path: String) -> void:
 	current_stage_idx = 0
 	current_prologue_idx = 0
 	hints_revealed = 0
+	select_random_questions()
 	set_state(State.START)
+
+## Selects a random question from each stage's question pool for replayability.
+func select_random_questions() -> void:
+	active_stage_variants.clear()
+	for i in range(data.get_total_stages()):
+		var base_stage := data.get_stage(i)
+		var pool: Array = base_stage.get("question_pool", [])
+		if not pool.is_empty():
+			var chosen: Dictionary = pool.pick_random()
+			var merged: Dictionary = base_stage.duplicate(true)
+			for k in chosen.keys():
+				merged[k] = chosen[k]
+			active_stage_variants[i] = merged
+		else:
+			active_stage_variants[i] = base_stage
+
+## Allows manually locking in a specific variant index for testing or seeds.
+func set_stage_variant_index(stage_idx: int, variant_idx: int) -> void:
+	var base_stage := data.get_stage(stage_idx)
+	var pool: Array = base_stage.get("question_pool", [])
+	if not pool.is_empty() and variant_idx >= 0 and variant_idx < pool.size():
+		var chosen: Dictionary = pool[variant_idx]
+		var merged: Dictionary = base_stage.duplicate(true)
+		for k in chosen.keys():
+			merged[k] = chosen[k]
+		active_stage_variants[stage_idx] = merged
+
+func get_active_stage(idx: int = -1) -> Dictionary:
+	if idx < 0:
+		idx = current_stage_idx
+	if active_stage_variants.has(idx):
+		return active_stage_variants[idx]
+	return data.get_stage(idx)
 
 func _process(delta: float) -> void:
 	if timer_active:
@@ -64,6 +99,7 @@ func set_state(new_state: State) -> void:
 	state_changed.emit(new_state, old_state)
 
 func start_game() -> void:
+	select_random_questions()
 	if data.get_total_prologues() > 0:
 		current_prologue_idx = 0
 		set_state(State.PROLOGUE)
@@ -118,7 +154,7 @@ func submit_answer(raw_input: String) -> void:
 		set_state(State.START)
 		return
 
-	var stage := data.get_stage(current_stage_idx)
+	var stage := get_active_stage(current_stage_idx)
 	var accepted: Array = stage.get("accepted_answers", [])
 
 	if AnswerValidator.matches_answer(cmd, accepted):
@@ -140,7 +176,7 @@ func submit_answer(raw_input: String) -> void:
 			trigger_game_over()
 
 func request_hint() -> void:
-	var stage := data.get_stage(current_stage_idx)
+	var stage := get_active_stage(current_stage_idx)
 	var hints: Array = stage.get("hints", [])
 	if hints_revealed < hints.size():
 		var hint_str: String = hints[hints_revealed]
@@ -192,6 +228,7 @@ func restart_game() -> void:
 	current_prologue_idx = 0
 	hints_revealed = 0
 	total_penalties_applied = 0.0
+	select_random_questions()
 	set_state(State.START)
 
 func process_command(cmd_text: String) -> void:
@@ -225,7 +262,7 @@ func process_command(cmd_text: String) -> void:
 
 func _emit_current_stage() -> void:
 	stage_changed.emit(
-		data.get_stage(current_stage_idx),
+		get_active_stage(current_stage_idx),
 		current_stage_idx,
 		data.get_total_stages()
 	)

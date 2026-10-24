@@ -40,9 +40,18 @@ func _init() -> void:
 		print("  FAIL: Stage image texture is null!")
 		tests_failed += 1
 
+	if main_node.exit_btn != null and main_node.exit_btn.text.find("Exit") != -1:
+		print("  PASS: Exit button is present in the header HUD.")
+		tests_passed += 1
+	else:
+		print("  FAIL: Exit button missing or has wrong label")
+		tests_failed += 1
+
 	# 2. Transition through Prologue
 	print("\n[CHECK 2] Starting game and navigating briefing...")
 	main_node._on_action_pressed()
+	for i in range(main_node.game_manager.data.get_total_stages()):
+		main_node.game_manager.set_stage_variant_index(i, 0)
 	await process_frame
 
 	if main_node.game_manager.current_state == GameManager.State.PROLOGUE:

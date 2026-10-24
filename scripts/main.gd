@@ -16,6 +16,7 @@ extends Control
 @onready var timer_label: Label = %TimerLabel
 @onready var progress_bar: ProgressBar = %ProgressBar
 @onready var fullscreen_btn: Button = %FullscreenButton
+@onready var exit_btn: Button = %ExitButton
 
 # Viewport Nodes
 @onready var stage_image: TextureRect = %StageImage
@@ -93,6 +94,8 @@ func _connect_signals() -> void:
 	restart_btn.pressed.connect(_on_restart_pressed)
 	if fullscreen_btn:
 		fullscreen_btn.pressed.connect(_on_fullscreen_toggle_pressed)
+	if exit_btn:
+		exit_btn.pressed.connect(_on_exit_pressed)
 
 func _set_viewport_image(filename: String, caption: String = "") -> void:
 	if image_cache.has(filename):
@@ -316,6 +319,15 @@ func _on_restart_pressed() -> void:
 	sound_manager.play_click()
 	game_manager.restart_game()
 	sound_manager.play_bgm()
+
+func _on_exit_pressed() -> void:
+	sound_manager.play_click()
+	if OS.has_feature("web"):
+		# Browsers restrict script window closure; return to briefing and stop
+		game_manager.restart_game()
+		sound_manager.play_bgm()
+	else:
+		get_tree().quit()
 
 func _on_screen_shake(strength: float) -> void:
 	if shake_tween and shake_tween.is_valid():

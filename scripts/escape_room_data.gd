@@ -49,6 +49,10 @@ func get_stage(idx: int) -> Dictionary:
 		return stages[idx]
 	return {}
 
+func get_stage_question_pool(idx: int) -> Array:
+	var stage := get_stage(idx)
+	return stage.get("question_pool", [])
+
 func get_prologue(idx: int) -> Dictionary:
 	if idx >= 0 and idx < prologue_screens.size():
 		return prologue_screens[idx]

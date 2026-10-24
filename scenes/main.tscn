@@ -205,6 +205,12 @@ layout_mode = 2
 theme_override_font_sizes/font_size = 13
 text = "⛶ Fullscreen"
 
+[node name="ExitButton" type="Button" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "✕ Exit"
+
 [node name="ContentSplit" type="HBoxContainer" parent="MainContainer/RootLayout"]
 layout_mode = 2
 size_flags_vertical = 3

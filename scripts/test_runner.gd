@@ -86,6 +86,8 @@ func _init() -> void:
 
 	# Start -> Prologue
 	gm.start_game()
+	for i in range(gm.data.get_total_stages()):
+		gm.set_stage_variant_index(i, 0)
 	if gm.current_state == GameManager.State.PROLOGUE and gm.current_prologue_idx == 0:
 		print("  PASS: Transitioned to PROLOGUE screen 0")
 		tests_passed += 1
@@ -156,6 +158,37 @@ func _init() -> void:
 		tests_passed += 1
 	else:
 		print("  FAIL: Expected VICTORY, got state %d" % gm.current_state)
+		tests_failed += 1
+
+	# --- TEST 4: Question Pool Replayability Database ---
+	print("\n[TEST 4] Testing Question Pool Replayability Database...")
+	var all_pools_valid := true
+	var total_variants := 0
+	for i in range(data.get_total_stages()):
+		var pool := data.get_stage_question_pool(i)
+		total_variants += pool.size()
+		if pool.size() < 3:
+			all_pools_valid = false
+			print("  FAIL: Stage %d has only %d question variants" % [i + 1, pool.size()])
+		for v in pool:
+			if not v.has("puzzle_text") or not v.has("accepted_answers") or v["accepted_answers"].is_empty():
+				all_pools_valid = false
+				print("  FAIL: Stage %d variant has missing puzzle_text or accepted_answers" % [i + 1])
+
+	if all_pools_valid:
+		print("  PASS: All 6 stages have at least 3 question variants (Total %d questions in database)." % total_variants)
+		tests_passed += 1
+	else:
+		tests_failed += 1
+
+	# Test random selection generates differing variants
+	gm.select_random_questions()
+	var random_active := gm.get_active_stage(0)
+	if random_active.has("puzzle_text") and not random_active["accepted_answers"].is_empty():
+		print("  PASS: Random question selection populated active stage data successfully.")
+		tests_passed += 1
+	else:
+		print("  FAIL: Random question selection failed.")
 		tests_failed += 1
 
 	gm.free()
