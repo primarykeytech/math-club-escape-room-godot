@@ -199,6 +199,12 @@ theme_override_colors/font_color = Color(0.901961, 0.921569, 0.941176, 1)
 theme_override_font_sizes/font_size = 18
 text = "TIME: 30:00"
 
+[node name="FullscreenButton" type="Button" parent="MainContainer/RootLayout/HeaderPanel/HeaderHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 13
+text = "⛶ Fullscreen"
+
 [node name="ContentSplit" type="HBoxContainer" parent="MainContainer/RootLayout"]
 layout_mode = 2
 size_flags_vertical = 3

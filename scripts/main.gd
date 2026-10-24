@@ -15,6 +15,7 @@ extends Control
 @onready var stage_badge: Label = %StageBadge
 @onready var timer_label: Label = %TimerLabel
 @onready var progress_bar: ProgressBar = %ProgressBar
+@onready var fullscreen_btn: Button = %FullscreenButton
 
 # Viewport Nodes
 @onready var stage_image: TextureRect = %StageImage
@@ -54,6 +55,7 @@ func _ready() -> void:
 		_update_ui_state(GameManager.State.START)
 		sound_manager.play_bgm()
 
+	_update_fullscreen_button_text()
 	input_line.grab_focus()
 
 func _preload_images() -> void:
@@ -89,6 +91,8 @@ func _connect_signals() -> void:
 	hint_btn.pressed.connect(_on_hint_pressed)
 	action_btn.pressed.connect(_on_action_pressed)
 	restart_btn.pressed.connect(_on_restart_pressed)
+	if fullscreen_btn:
+		fullscreen_btn.pressed.connect(_on_fullscreen_toggle_pressed)
 
 func _set_viewport_image(filename: String, caption: String = "") -> void:
 	if image_cache.has(filename):
@@ -331,3 +335,30 @@ func _on_alert_flash() -> void:
 	alert_overlay.color = Color(0.8, 0.1, 0.1, 0.35)
 	flash_tween = create_tween()
 	flash_tween.tween_property(alert_overlay, "color:a", 0.0, 0.4)
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_F11 or (event.keycode == KEY_ENTER and event.alt_pressed):
+			_toggle_fullscreen()
+			get_viewport().set_input_as_handled()
+
+func _on_fullscreen_toggle_pressed() -> void:
+	sound_manager.play_click()
+	_toggle_fullscreen()
+
+func _toggle_fullscreen() -> void:
+	var mode := DisplayServer.window_get_mode()
+	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN or mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	else:
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	_update_fullscreen_button_text()
+
+func _update_fullscreen_button_text() -> void:
+	if fullscreen_btn == null:
+		return
+	var mode := DisplayServer.window_get_mode()
+	if mode == DisplayServer.WINDOW_MODE_FULLSCREEN or mode == DisplayServer.WINDOW_MODE_EXCLUSIVE_FULLSCREEN:
+		fullscreen_btn.text = "🗗 Windowed"
+	else:
+		fullscreen_btn.text = "⛶ Fullscreen"
