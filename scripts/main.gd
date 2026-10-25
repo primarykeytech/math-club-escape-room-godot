@@ -40,12 +40,10 @@ extends Control
 
 # Image Cache
 var image_cache: Dictionary = {}
-var original_container_pos: Vector2 = Vector2.ZERO
 var shake_tween: Tween
 var flash_tween: Tween
 
 func _ready() -> void:
-	original_container_pos = main_container.position
 	_preload_images()
 	_connect_signals()
 
@@ -332,14 +330,16 @@ func _on_exit_pressed() -> void:
 func _on_screen_shake(strength: float) -> void:
 	if shake_tween and shake_tween.is_valid():
 		shake_tween.kill()
+	position = Vector2.ZERO
 	shake_tween = create_tween()
 	for i in range(4):
+		var decay := (1.0 - float(i) * 0.25)
 		var offset := Vector2(
-			randf_range(-strength, strength) * (1.0 - i * 0.25),
-			randf_range(-strength, strength) * (1.0 - i * 0.25)
+			randf_range(-strength, strength) * decay,
+			randf_range(-strength, strength) * decay
 		)
-		shake_tween.tween_property(main_container, "position", original_container_pos + offset, 0.04)
-	shake_tween.tween_property(main_container, "position", original_container_pos, 0.04)
+		shake_tween.tween_property(self, "position", offset, 0.04)
+	shake_tween.tween_property(self, "position", Vector2.ZERO, 0.04)
 
 func _on_alert_flash() -> void:
 	if flash_tween and flash_tween.is_valid():
