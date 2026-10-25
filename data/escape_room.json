@@ -145,6 +145,7 @@
       "question_pool": [
         {
           "variant_id": "shift_5",
+          "image": "parchment_cipher_gb.png",
           "flavor_text": "An inscription on the parchment reads: 'When Julius Caesar could not see past tall people at the arena, he would shift over.' Corner scribble: 2_ + 5_ = 80.",
           "puzzle_text": "The encoded text reads: 'XJJP YMJ AFZQY ITTW'. Solve the scribble to find the shift, then decipher the message to reveal the next step:",
           "accepted_answers": [
@@ -161,6 +162,7 @@
         },
         {
           "variant_id": "shift_6",
+          "image": "parchment_cipher_6.png",
           "flavor_text": "A scroll fragment bears a cipher with a marginal note: 'Shift backward to reveal the truth.' Corner scribble: 3_ + 4_ = 82.",
           "puzzle_text": "The encoded text reads: 'ATRUIQ ZNK INGSHKX'. Solve the scribble to find the identical missing digit shift, then decipher the message:",
           "accepted_answers": [
@@ -177,6 +179,7 @@
         },
         {
           "variant_id": "shift_7",
+          "image": "parchment_cipher_7.png",
           "flavor_text": "A library parchment scroll bears an imperial cipher. In the margin: 1_ + 6_ = 84.",
           "puzzle_text": "The encoded text reads: 'YLCLHS AOL HYJOPCL'. Solve the scribble to find the identical digit shift, then decipher the message:",
           "accepted_answers": [
