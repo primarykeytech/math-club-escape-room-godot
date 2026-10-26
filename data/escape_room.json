@@ -5,364 +5,364 @@
   "time_limit_seconds": 1800,
   "penalty_seconds": 30,
   "prologue_screens": [
-    {
-      "id": "prologue_1",
-      "speaker": "THE PROFESSOR",
-      "title": "A SUDDEN TRANSMISSION",
-      "image": "professor_intro_gb.png",
-      "text": "Greetings, scholars. You may call me 'The Professor'. For too long, mathematics has been treated as harmless ink on paper. Today, your calculations carry consequences. You find yourselves locked deep within the Archives of Newton. Only a keen mind and cold logic will earn you the key back to freedom."
-    },
-    {
-      "id": "prologue_2",
-      "speaker": "THE PROFESSOR",
-      "title": "RULES OF ENGAGEMENT",
-      "image": "professor_intro_gb.png",
-      "text": "Listen carefully to the rules of your trial:\n1. TIME LIMIT: You have {time_limit_minutes} minutes before the vault seals permanently.\n2. INPUT: Type your answers at the prompt or use the interface buttons.\n3. HINTS: If you are stuck, type 'hint' into the prompt or click the Hint button.\n4. PENALTIES: Careless guesses will cost you {penalty_seconds} seconds each!\nProceed now... if you dare."
-    }
+	{
+	  "id": "prologue_1",
+	  "speaker": "THE PROFESSOR",
+	  "title": "A SUDDEN TRANSMISSION",
+	  "image": "professor_intro_gb.png",
+	  "text": "Greetings, scholars. You may call me 'The Professor'. For too long, mathematics has been treated as harmless ink on paper. Today, your calculations carry consequences. You find yourselves locked deep within the Archives of Newton. Only a keen mind and cold logic will earn you the key back to freedom."
+	},
+	{
+	  "id": "prologue_2",
+	  "speaker": "THE PROFESSOR",
+	  "title": "RULES OF ENGAGEMENT",
+	  "image": "professor_intro_gb.png",
+	  "text": "Listen carefully to the rules of your trial:\n1. TIME LIMIT: You have {time_limit_minutes} minutes before the vault seals permanently.\n2. INPUT: Type your answers at the prompt or use the interface buttons.\n3. HINTS: If you are stuck, type 'hint' into the prompt or click the Hint button.\n4. PENALTIES: Careless guesses will cost you {penalty_seconds} seconds each!\nProceed now... if you dare."
+	}
   ],
   "stages": [
-    {
-      "id": "stage_1",
-      "title": "THE SOLITARY STONE ROOM",
-      "image": "stone_room_chest_gb.png",
-      "flavor_text": "You enter a cold, silent stone chamber. In the center rests a heavy wooden chest bound with dark iron straps, secured by a 4-digit rotary combination padlock. A note is nailed to the lid:",
-      "puzzle_text": "A school orders 64 boxes of crayons. Each box holds 30 crayons. Later, 500 crayons are used in art class. Then 240 more crayons are donated. What 4-digit number of crayons does the school have now?",
-      "accepted_answers": ["1660"],
-      "hints": [
-        "HINT 1: Calculate the total ordered first: 64 boxes x 30 crayons = 1920.",
+	{
+	  "id": "stage_1",
+	  "title": "THE SOLITARY STONE ROOM",
+	  "image": "stone_room_chest_gb.png",
+	  "flavor_text": "You enter a cold, silent stone chamber. In the center rests a heavy wooden chest bound with dark iron straps, secured by a 4-digit rotary combination padlock. A note is nailed to the lid:",
+	  "puzzle_text": "A school orders 64 boxes of crayons. Each box holds 30 crayons. Later, 500 crayons are used in art class. Then 240 more crayons are donated. What 4-digit number of crayons does the school have now?",
+	  "accepted_answers": ["1660"],
+	  "hints": [
+		"HINT 1: Calculate the total ordered first: 64 boxes x 30 crayons = 1920.",
         "HINT 2: Subtract the used crayons, then add donated: 1920 - 500 + 240 = 1660."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "CLACK! The 4 tumblers lock into 1-6-6-0 and the padlock pops open! Inside the chest lies a brass key and an unlocked iron passage leading to an old study...",
-      "question_pool": [
-        {
-          "variant_id": "crayons",
-          "flavor_text": "You enter a cold, silent stone chamber. In the center rests a heavy wooden chest bound with dark iron straps, secured by a 4-digit rotary combination padlock. A note is nailed to the lid:",
-          "puzzle_text": "A school orders 64 boxes of crayons. Each box holds 30 crayons. Later, 500 crayons are used in art class. Then 240 more crayons are donated. What 4-digit number of crayons does the school have now?",
-          "accepted_answers": ["1660"],
-          "hints": [
-            "HINT 1: Calculate the total ordered first: 64 boxes x 30 crayons = 1920.",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "CLACK! The 4 tumblers lock into 1-6-6-0 and the padlock pops open! Inside the chest lies a brass key and an unlocked iron passage leading to an old study...",
+	  "question_pool": [
+		{
+		  "variant_id": "crayons",
+		  "flavor_text": "You enter a cold, silent stone chamber. In the center rests a heavy wooden chest bound with dark iron straps, secured by a 4-digit rotary combination padlock. A note is nailed to the lid:",
+		  "puzzle_text": "A school orders 64 boxes of crayons. Each box holds 30 crayons. Later, 500 crayons are used in art class. Then 240 more crayons are donated. What 4-digit number of crayons does the school have now?",
+		  "accepted_answers": ["1660"],
+		  "hints": [
+			"HINT 1: Calculate the total ordered first: 64 boxes x 30 crayons = 1920.",
             "HINT 2: Subtract the used crayons, then add donated: 1920 - 500 + 240 = 1660."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLACK! The 4 tumblers lock into 1-6-6-0 and the padlock pops open! Inside the chest lies a brass key and an unlocked iron passage leading to an old study..."
-        },
-        {
-          "variant_id": "manuscripts",
-          "flavor_text": "You enter a cold stone chamber. Nailed to the chest lid is an archival ledger describing historic folio leaf restoration:",
-          "puzzle_text": "An archivist binds 45 volumes of manuscripts. Each volume holds 60 parchment leaves. 350 leaves are damaged by damp and removed, but 120 recovered leaves are rebound into the collection. What 4-digit number of leaves are now bound in total?",
-          "accepted_answers": ["2470"],
-          "hints": [
-            "HINT 1: Calculate initial leaves: 45 volumes x 60 leaves = 2700.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLACK! The 4 tumblers lock into 1-6-6-0 and the padlock pops open! Inside the chest lies a brass key and an unlocked iron passage leading to an old study..."
+		},
+		{
+		  "variant_id": "manuscripts",
+		  "flavor_text": "You enter a cold stone chamber. Nailed to the chest lid is an archival ledger describing historic folio leaf restoration:",
+		  "puzzle_text": "An archivist binds 45 volumes of manuscripts. Each volume holds 60 parchment leaves. 350 leaves are damaged by damp and removed, but 120 recovered leaves are rebound into the collection. What 4-digit number of leaves are now bound in total?",
+		  "accepted_answers": ["2470"],
+		  "hints": [
+			"HINT 1: Calculate initial leaves: 45 volumes x 60 leaves = 2700.",
             "HINT 2: Subtract damaged leaves and add recovered: 2700 - 350 + 120 = 2470."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLACK! The tumblers click into 2-4-7-0 and the heavy padlock swings open! The iron door swings ajar."
-        },
-        {
-          "variant_id": "tokens",
-          "flavor_text": "In the cold stone room, an inscription on the chest padlock tells of minted commemorative tokens:",
-          "puzzle_text": "The Society mints 52 sacks of brass tokens. Each sack contains 40 tokens. 680 tokens are awarded during the symposium. Later, an alumnus donates 410 antique tokens back to the collection. What 4-digit total number of tokens rests in the archive now?",
-          "accepted_answers": ["1810"],
-          "hints": [
-            "HINT 1: Total minted: 52 sacks x 40 tokens = 2080.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLACK! The tumblers click into 2-4-7-0 and the heavy padlock swings open! The iron door swings ajar."
+		},
+		{
+		  "variant_id": "tokens",
+		  "flavor_text": "In the cold stone room, an inscription on the chest padlock tells of minted commemorative tokens:",
+		  "puzzle_text": "The Society mints 52 sacks of brass tokens. Each sack contains 40 tokens. 680 tokens are awarded during the symposium. Later, an alumnus donates 410 antique tokens back to the collection. What 4-digit total number of tokens rests in the archive now?",
+		  "accepted_answers": ["1810"],
+		  "hints": [
+			"HINT 1: Total minted: 52 sacks x 40 tokens = 2080.",
             "HINT 2: Deduct awarded and add donated: 2080 - 680 + 410 = 1810."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLACK! The combination 1-8-1-0 clicks home! The padlock releases, opening the passageway forward."
-        }
-      ]
-    },
-    {
-      "id": "stage_2",
-      "title": "THE SCHOLAR'S WOODEN DESK",
-      "image": "wooden_desk_cups_gb.png",
-      "flavor_text": "You walk up to an old wooden desk. An immovable stone cup sits on each end (left for pencils, right for pens). Scattered in the middle are writing instruments. Underneath sits a locked drawer.",
-      "puzzle_text": "Starburst has some money. She can buy either 20 pencils or 8 pens with all her money. She buys 15 pencils for $30 and some pens with the remaining money. How many pencils and pens does she buy in total? Enter: [pencils] [pens]",
-      "accepted_answers": ["15 2", "15, 2", "15,2", "15 and 2", "15 pencils, 2 pens", "15 pencils 2 pens"],
-      "hints": [
-        "HINT 1: Find price of 1 pencil: $30 / 15 = $2 each. Total money = 20 x $2 = $40.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLACK! The combination 1-8-1-0 clicks home! The padlock releases, opening the passageway forward."
+		}
+	  ]
+	},
+	{
+	  "id": "stage_2",
+	  "title": "THE SCHOLAR'S WOODEN DESK",
+	  "image": "wooden_desk_cups_gb.png",
+	  "flavor_text": "You walk up to an old wooden desk. An immovable stone cup sits on each end (left for pencils, right for pens). Scattered in the middle are writing instruments. Underneath sits a locked drawer.",
+	  "puzzle_text": "Starburst has some money. She can buy either 20 pencils or 8 pens with all her money. She buys 15 pencils for $30 and some pens with the remaining money. How many pencils and pens does she buy in total? Enter: [pencils] [pens]",
+	  "accepted_answers": ["15 2", "15, 2", "15,2", "15 and 2", "15 pencils, 2 pens", "15 pencils 2 pens"],
+	  "hints": [
+		"HINT 1: Find price of 1 pencil: $30 / 15 = $2 each. Total money = 20 x $2 = $40.",
         "HINT 2: Find price of 1 pen: $40 / 8 = $5 each. Money left = $40 - $30 = $10. Pens bought = $10 / $5 = 2 pens. Enter: '15 2'."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "CLICK! The weight of the 15 pencils and 2 pens in the cups triggers a hidden mechanism! The locked drawer slides open, revealing a rolled-up parchment scroll.",
-      "question_pool": [
-        {
-          "variant_id": "starburst",
-          "flavor_text": "You walk up to an old wooden desk. An immovable stone cup sits on each end (left for pencils, right for pens). Scattered in the middle are writing instruments. Underneath sits a locked drawer.",
-          "puzzle_text": "Starburst has some money. She can buy either 20 pencils or 8 pens with all her money. She buys 15 pencils for $30 and some pens with the remaining money. How many pencils and pens does she buy in total? Enter: [pencils] [pens]",
-          "accepted_answers": ["15 2", "15, 2", "15,2", "15 and 2", "15 pencils, 2 pens", "15 pencils 2 pens"],
-          "hints": [
-            "HINT 1: Find price of 1 pencil: $30 / 15 = $2 each. Total money = 20 x $2 = $40.",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "CLICK! The weight of the 15 pencils and 2 pens in the cups triggers a hidden mechanism! The locked drawer slides open, revealing a rolled-up parchment scroll.",
+	  "question_pool": [
+		{
+		  "variant_id": "starburst",
+		  "flavor_text": "You walk up to an old wooden desk. An immovable stone cup sits on each end (left for pencils, right for pens). Scattered in the middle are writing instruments. Underneath sits a locked drawer.",
+		  "puzzle_text": "Starburst has some money. She can buy either 20 pencils or 8 pens with all her money. She buys 15 pencils for $30 and some pens with the remaining money. How many pencils and pens does she buy in total? Enter: [pencils] [pens]",
+		  "accepted_answers": ["15 2", "15, 2", "15,2", "15 and 2", "15 pencils, 2 pens", "15 pencils 2 pens"],
+		  "hints": [
+			"HINT 1: Find price of 1 pencil: $30 / 15 = $2 each. Total money = 20 x $2 = $40.",
             "HINT 2: Find price of 1 pen: $40 / 8 = $5 each. Money left = $40 - $30 = $10. Pens bought = $10 / $5 = 2 pens. Enter: '15 2'."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLICK! The weight of 15 pencils and 2 pens balances the stone cups, and the desk drawer glides open!"
-        },
-        {
-          "variant_id": "quills",
-          "flavor_text": "Upon the scholar's desk rests a receipt with calculation marks beside the two stone cups:",
-          "puzzle_text": "A scholar has a budget. With all the funds, they can buy either 30 pencils or 10 pens. They purchase 18 pencils for $54, and spend all remaining money on pens. How many pencils and pens does the scholar buy in total? Enter: [pencils] [pens]",
-          "accepted_answers": ["18 4", "18, 4", "18,4", "18 and 4", "18 pencils, 4 pens", "18 pencils 4 pens"],
-          "hints": [
-            "HINT 1: Price of 1 pencil = $54 / 18 = $3. Total funds = 30 x $3 = $90.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLICK! The weight of 15 pencils and 2 pens balances the stone cups, and the desk drawer glides open!"
+		},
+		{
+		  "variant_id": "quills",
+		  "flavor_text": "Upon the scholar's desk rests a receipt with calculation marks beside the two stone cups:",
+		  "puzzle_text": "A scholar has a budget. With all the funds, they can buy either 30 pencils or 10 pens. They purchase 18 pencils for $54, and spend all remaining money on pens. How many pencils and pens does the scholar buy in total? Enter: [pencils] [pens]",
+		  "accepted_answers": ["18 4", "18, 4", "18,4", "18 and 4", "18 pencils, 4 pens", "18 pencils 4 pens"],
+		  "hints": [
+			"HINT 1: Price of 1 pencil = $54 / 18 = $3. Total funds = 30 x $3 = $90.",
             "HINT 2: Price of 1 pen = $90 / 10 = $9. Money left = $90 - $54 = $36. Pens bought = $36 / $9 = 4 pens. Enter: '18 4'."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLICK! Placing 18 pencils and 4 pens into the stone cups unlocks the brass drawer catch!"
-        },
-        {
-          "variant_id": "bursary",
-          "flavor_text": "Carved into the mahogany desk top is a pricing problem left by the archives clerk:",
-          "puzzle_text": "A clerk has a bursary. They can buy either 15 pencils or 10 pens with all their money. They buy 9 pencils for $36 and spend all remaining funds on pens. How many pencils and pens do they purchase in total? Enter: [pencils] [pens]",
-          "accepted_answers": ["9 4", "9, 4", "9,4", "9 and 4", "9 pencils, 4 pens", "9 pencils 4 pens"],
-          "hints": [
-            "HINT 1: Price of 1 pencil = $36 / 9 = $4. Total bursary = 15 x $4 = $60.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLICK! Placing 18 pencils and 4 pens into the stone cups unlocks the brass drawer catch!"
+		},
+		{
+		  "variant_id": "bursary",
+		  "flavor_text": "Carved into the mahogany desk top is a pricing problem left by the archives clerk:",
+		  "puzzle_text": "A clerk has a bursary. They can buy either 15 pencils or 10 pens with all their money. They buy 9 pencils for $36 and spend all remaining funds on pens. How many pencils and pens do they purchase in total? Enter: [pencils] [pens]",
+		  "accepted_answers": ["9 4", "9, 4", "9,4", "9 and 4", "9 pencils, 4 pens", "9 pencils 4 pens"],
+		  "hints": [
+			"HINT 1: Price of 1 pencil = $36 / 9 = $4. Total bursary = 15 x $4 = $60.",
             "HINT 2: Price of 1 pen = $60 / 10 = $6. Remaining funds = $60 - $36 = $24. Pens = $24 / $6 = 4 pens. Enter: '9 4'."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLICK! 9 pencils and 4 pens depress the weight cups, unlocking the hidden drawer!"
-        }
-      ]
-    },
-    {
-      "id": "stage_3",
-      "title": "THE CAESAR CIPHER PARCHMENT",
-      "image": "parchment_cipher_gb.png",
-      "flavor_text": "An inscription on the parchment reads: 'When Julius Caesar could not see past tall people at the arena, he would shift over.' Corner scribble: 2_ + 5_ = 80.",
-      "puzzle_text": "The encoded text reads: 'XJJP YMJ AFZQY ITTW'. Solve the scribble to find the shift, then decipher the message to reveal the next step:",
-      "accepted_answers": [
-        "SEEK THE VAULT DOOR",
-        "SEEK THE VAULT DOOR.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLICK! 9 pencils and 4 pens depress the weight cups, unlocking the hidden drawer!"
+		}
+	  ]
+	},
+	{
+	  "id": "stage_3",
+	  "title": "THE CAESAR CIPHER PARCHMENT",
+	  "image": "parchment_cipher_gb.png",
+	  "flavor_text": "An inscription on the parchment reads: 'When Julius Caesar could not see past tall people at the arena, he would shift over.' Corner scribble: 2_ + 5_ = 80.",
+	  "puzzle_text": "The encoded text reads: 'XJJP YMJ AFZQY ITTW'. Solve the scribble to find the shift, then decipher the message to reveal the next step:",
+	  "accepted_answers": [
+		"SEEK THE VAULT DOOR",
+		"SEEK THE VAULT DOOR.",
         "SEEKTHEVAULTDOOR"
-      ],
-      "hints": [
-        "HINT 1: Solve 2_ + 5_ = 80. The identical missing digit is 5 (25 + 55 = 80). The Caesar shift is 5!",
+	  ],
+	  "hints": [
+		"HINT 1: Solve 2_ + 5_ = 80. The identical missing digit is 5 (25 + 55 = 80). The Caesar shift is 5!",
         "HINT 2: Shift each letter in 'XJJP YMJ AFZQY ITTW' backward by 5 letters (X -> S, J -> E...). Enter the deciphered words."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "EXCELLENT! You speak the deciphered command: 'SEEK THE VAULT DOOR'! A concealed passage swings open!",
-      "question_pool": [
-        {
-          "variant_id": "shift_5",
-          "image": "parchment_cipher_gb.png",
-          "flavor_text": "An inscription on the parchment reads: 'When Julius Caesar could not see past tall people at the arena, he would shift over.' Corner scribble: 2_ + 5_ = 80.",
-          "puzzle_text": "The encoded text reads: 'XJJP YMJ AFZQY ITTW'. Solve the scribble to find the shift, then decipher the message to reveal the next step:",
-          "accepted_answers": [
-            "SEEK THE VAULT DOOR",
-            "SEEK THE VAULT DOOR.",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "EXCELLENT! You speak the deciphered command: 'SEEK THE VAULT DOOR'! A concealed passage swings open!",
+	  "question_pool": [
+		{
+		  "variant_id": "shift_5",
+		  "image": "parchment_cipher_gb.png",
+		  "flavor_text": "An inscription on the parchment reads: 'When Julius Caesar could not see past tall people at the arena, he would shift over.' Corner scribble: 2_ + 5_ = 80.",
+		  "puzzle_text": "The encoded text reads: 'XJJP YMJ AFZQY ITTW'. Solve the scribble to find the shift, then decipher the message to reveal the next step:",
+		  "accepted_answers": [
+			"SEEK THE VAULT DOOR",
+			"SEEK THE VAULT DOOR.",
             "SEEKTHEVAULTDOOR"
-          ],
-          "hints": [
-            "HINT 1: Solve 2_ + 5_ = 80. The identical missing digit is 5 (25 + 55 = 80). The Caesar shift is 5!",
+		  ],
+		  "hints": [
+			"HINT 1: Solve 2_ + 5_ = 80. The identical missing digit is 5 (25 + 55 = 80). The Caesar shift is 5!",
             "HINT 2: Shift each letter in 'XJJP YMJ AFZQY ITTW' backward by 5 letters (X -> S, J -> E...)."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "EXCELLENT! You speak the deciphered command: 'SEEK THE VAULT DOOR'! As the words echo through the chamber, a concealed passage swings open!"
-        },
-        {
-          "variant_id": "shift_6",
-          "image": "parchment_cipher_6.png",
-          "flavor_text": "A scroll fragment bears a cipher with a marginal note: 'Shift backward to reveal the truth.' Corner scribble: 3_ + 4_ = 82.",
-          "puzzle_text": "The encoded text reads: 'ATRUIQ ZNK INGSHKX'. Solve the scribble to find the identical missing digit shift, then decipher the message:",
-          "accepted_answers": [
-            "UNLOCK THE CHAMBER",
-            "UNLOCK THE CHAMBER.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "EXCELLENT! You speak the deciphered command: 'SEEK THE VAULT DOOR'! As the words echo through the chamber, a concealed passage swings open!"
+		},
+		{
+		  "variant_id": "shift_6",
+		  "image": "parchment_cipher_6.png",
+		  "flavor_text": "A scroll fragment bears a cipher with a marginal note: 'Shift backward to reveal the truth.' Corner scribble: 3_ + 4_ = 82.",
+		  "puzzle_text": "The encoded text reads: 'ATRUIQ ZNK INGSHKX'. Solve the scribble to find the identical missing digit shift, then decipher the message:",
+		  "accepted_answers": [
+			"UNLOCK THE CHAMBER",
+			"UNLOCK THE CHAMBER.",
             "UNLOCKTHECHAMBER"
-          ],
-          "hints": [
-            "HINT 1: Solve 3_ + 4_ = 82. The identical missing digit is 6 (36 + 46 = 82). The Caesar shift is 6!",
+		  ],
+		  "hints": [
+			"HINT 1: Solve 3_ + 4_ = 82. The identical missing digit is 6 (36 + 46 = 82). The Caesar shift is 6!",
             "HINT 2: Shift each letter in 'ATRUIQ ZNK INGSHKX' backward by 6 letters (A -> U, T -> N, R -> L...)."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "EXCELLENT! Reciting 'UNLOCK THE CHAMBER' causes the ancient stone archway to rumble open!"
-        },
-        {
-          "variant_id": "shift_7",
-          "image": "parchment_cipher_7.png",
-          "flavor_text": "A library parchment scroll bears an imperial cipher. In the margin: 1_ + 6_ = 84.",
-          "puzzle_text": "The encoded text reads: 'YLCLHS AOL HYJOPCL'. Solve the scribble to find the identical digit shift, then decipher the message:",
-          "accepted_answers": [
-            "REVEAL THE ARCHIVE",
-            "REVEAL THE ARCHIVE.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "EXCELLENT! Reciting 'UNLOCK THE CHAMBER' causes the ancient stone archway to rumble open!"
+		},
+		{
+		  "variant_id": "shift_7",
+		  "image": "parchment_cipher_7.png",
+		  "flavor_text": "A library parchment scroll bears an imperial cipher. In the margin: 1_ + 6_ = 84.",
+		  "puzzle_text": "The encoded text reads: 'YLCLHS AOL HYJOPCL'. Solve the scribble to find the identical digit shift, then decipher the message:",
+		  "accepted_answers": [
+			"REVEAL THE ARCHIVE",
+			"REVEAL THE ARCHIVE.",
             "REVEALTHEARCHIVE"
-          ],
-          "hints": [
-            "HINT 1: Solve 1_ + 6_ = 84. The identical digit is 7 (17 + 67 = 84). The Caesar shift is 7!",
+		  ],
+		  "hints": [
+			"HINT 1: Solve 1_ + 6_ = 84. The identical digit is 7 (17 + 67 = 84). The Caesar shift is 7!",
             "HINT 2: Shift each letter in 'YLCLHS AOL HYJOPCL' backward by 7 letters (Y -> R, L -> E...)."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "EXCELLENT! Declaring 'REVEAL THE ARCHIVE' activates the hidden chamber mechanism!"
-        }
-      ]
-    },
-    {
-      "id": "stage_4",
-      "title": "THE SCALE OF SUN AND MOON",
-      "image": "balance_scale_gb.png",
-      "flavor_text": "Before you stands an ancient brass balance scale atop a stone altar flanked by torchlight.",
-      "puzzle_text": "Tablet 1: 3 Suns + 2 Moons balance 54 oz.\nTablet 2: 1 Sun + 2 Moons balance 30 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
-      "accepted_answers": ["21", "21 oz", "21 ounces", "21oz"],
-      "hints": [
-        "HINT 1: Compare Tablet 1 and Tablet 2. The difference of 24 oz (54 - 30) is caused by 2 Suns. What does 1 Sun weigh?",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "EXCELLENT! Declaring 'REVEAL THE ARCHIVE' activates the hidden chamber mechanism!"
+		}
+	  ]
+	},
+	{
+	  "id": "stage_4",
+	  "title": "THE SCALE OF SUN AND MOON",
+	  "image": "balance_scale_gb.png",
+	  "flavor_text": "Before you stands an ancient brass balance scale atop a stone altar flanked by torchlight.",
+	  "puzzle_text": "Tablet 1: 3 Suns + 2 Moons balance 54 oz.\nTablet 2: 1 Sun + 2 Moons balance 30 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
+	  "accepted_answers": ["21", "21 oz", "21 ounces", "21oz"],
+	  "hints": [
+		"HINT 1: Compare Tablet 1 and Tablet 2. The difference of 24 oz (54 - 30) is caused by 2 Suns. What does 1 Sun weigh?",
         "HINT 2: 1 Sun = 12 oz. In Tablet 2, 12 + 2 Moons = 30 oz -> 2 Moons = 18 oz -> 1 Moon = 9 oz. Combined: 12 + 9 = 21 oz."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "CLANG! You place 21 oz on the counterweight pan. The brass beam balances perfectly and a stone archway opens!",
-      "question_pool": [
-        {
-          "variant_id": "balance_21",
-          "flavor_text": "Before you stands an ancient brass balance scale atop a stone altar flanked by torchlight.",
-          "puzzle_text": "Tablet 1: 3 Suns + 2 Moons balance 54 oz.\nTablet 2: 1 Sun + 2 Moons balance 30 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
-          "accepted_answers": ["21", "21 oz", "21 ounces", "21oz"],
-          "hints": [
-            "HINT 1: Compare Tablet 1 and Tablet 2. The difference of 24 oz (54 - 30) is caused by 2 Suns. What does 1 Sun weigh?",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "CLANG! You place 21 oz on the counterweight pan. The brass beam balances perfectly and a stone archway opens!",
+	  "question_pool": [
+		{
+		  "variant_id": "balance_21",
+		  "flavor_text": "Before you stands an ancient brass balance scale atop a stone altar flanked by torchlight.",
+		  "puzzle_text": "Tablet 1: 3 Suns + 2 Moons balance 54 oz.\nTablet 2: 1 Sun + 2 Moons balance 30 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
+		  "accepted_answers": ["21", "21 oz", "21 ounces", "21oz"],
+		  "hints": [
+			"HINT 1: Compare Tablet 1 and Tablet 2. The difference of 24 oz (54 - 30) is caused by 2 Suns. What does 1 Sun weigh?",
             "HINT 2: 1 Sun = 12 oz. In Tablet 2, 12 + 2 Moons = 30 oz -> 2 Moons = 18 oz -> 1 Moon = 9 oz. Combined: 12 + 9 = 21 oz."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANG! You place 21 oz on the counterweight pan. The brass beam balances perfectly and a stone archway opens!"
-        },
-        {
-          "variant_id": "balance_18",
-          "flavor_text": "The celestial balance scale gleams under torchlight between two inscribed stone tablets:",
-          "puzzle_text": "Tablet 1: 4 Suns + 3 Moons balance 62 oz.\nTablet 2: 2 Suns + 3 Moons balance 46 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
-          "accepted_answers": ["18", "18 oz", "18 ounces", "18oz"],
-          "hints": [
-            "HINT 1: Subtract Tablet 2 from Tablet 1: 2 Suns = 16 oz, so 1 Sun = 8 oz.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANG! You place 21 oz on the counterweight pan. The brass beam balances perfectly and a stone archway opens!"
+		},
+		{
+		  "variant_id": "balance_18",
+		  "flavor_text": "The celestial balance scale gleams under torchlight between two inscribed stone tablets:",
+		  "puzzle_text": "Tablet 1: 4 Suns + 3 Moons balance 62 oz.\nTablet 2: 2 Suns + 3 Moons balance 46 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
+		  "accepted_answers": ["18", "18 oz", "18 ounces", "18oz"],
+		  "hints": [
+			"HINT 1: Subtract Tablet 2 from Tablet 1: 2 Suns = 16 oz, so 1 Sun = 8 oz.",
             "HINT 2: In Tablet 2, 2(8) + 3 Moons = 46 -> 3 Moons = 30 -> 1 Moon = 10 oz. Combined: 8 + 10 = 18 oz."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANG! You set 18 oz on the pan. The counterweight settles level and the stone archway swings free!"
-        },
-        {
-          "variant_id": "balance_19",
-          "flavor_text": "Golden sun and silver moon weights sit beside the altar balance beam:",
-          "puzzle_text": "Tablet 1: 5 Suns + 2 Moons balance 71 oz.\nTablet 2: 2 Suns + 2 Moons balance 38 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
-          "accepted_answers": ["19", "19 oz", "19 ounces", "19oz"],
-          "hints": [
-            "HINT 1: Subtract Tablet 2 from Tablet 1: 3 Suns = 33 oz -> 1 Sun = 11 oz.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANG! You set 18 oz on the pan. The counterweight settles level and the stone archway swings free!"
+		},
+		{
+		  "variant_id": "balance_19",
+		  "flavor_text": "Golden sun and silver moon weights sit beside the altar balance beam:",
+		  "puzzle_text": "Tablet 1: 5 Suns + 2 Moons balance 71 oz.\nTablet 2: 2 Suns + 2 Moons balance 38 oz.\nEnter the combined weight (in oz) of 1 Sun and 1 Moon to balance the altar:",
+		  "accepted_answers": ["19", "19 oz", "19 ounces", "19oz"],
+		  "hints": [
+			"HINT 1: Subtract Tablet 2 from Tablet 1: 3 Suns = 33 oz -> 1 Sun = 11 oz.",
             "HINT 2: In Tablet 2, 2(11) + 2 Moons = 38 -> 2 Moons = 16 -> 1 Moon = 8 oz. Combined: 11 + 8 = 19 oz."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANG! 19 oz balances the celestial scale to perfection! The path forward opens."
-        }
-      ]
-    },
-    {
-      "id": "stage_5",
-      "title": "THE MAGIC SQUARE MOSAIC",
-      "image": "magic_square_gb.png",
-      "flavor_text": "You step onto a mystical 3x3 stone floor. Runes on the border state: 'Every row, column, and diagonal must unite to equal the same sacred sum.'",
-      "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
-      "accepted_answers": ["132", "1 3 2", "1, 3, 2", "1,3,2"],
-      "hints": [
-        "HINT 1: Find the magic constant sum using complete rows or diagonals (e.g. 8 + 5 + 2 = 15). The magic sum is 15!",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANG! 19 oz balances the celestial scale to perfection! The path forward opens."
+		}
+	  ]
+	},
+	{
+	  "id": "stage_5",
+	  "title": "THE MAGIC SQUARE MOSAIC",
+	  "image": "magic_square_gb.png",
+	  "flavor_text": "You step onto a mystical 3x3 stone floor. Runes on the border state: 'Every row, column, and diagonal must unite to equal the same sacred sum.'",
+	  "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
+	  "accepted_answers": ["132", "1 3 2", "1, 3, 2", "1,3,2"],
+	  "hints": [
+		"HINT 1: Find the magic constant sum using complete rows or diagonals (e.g. 8 + 5 + 2 = 15). The magic sum is 15!",
         "HINT 2: Row 1: 8 + A + 6 = 15 -> A = 1. Row 2: B + 5 + 7 = 15 -> B = 3. Row 3: 4 + 9 + C = 15 -> C = 2. Code is 132."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "RUMBLE! As you enter 1-3-2, stone tiles A, B, and C lock into place with a heavy click! The floor traps disengage!",
-      "question_pool": [
-        {
-          "variant_id": "square_132",
-          "flavor_text": "You step onto a mystical 3x3 stone floor. Runes on the border state: 'Every row, column, and diagonal must equal 15.' Grid:\n[8] [A] [6]\n[B] [5] [7]\n[4] [9] [C]",
-          "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
-          "accepted_answers": ["132", "1 3 2", "1, 3, 2", "1,3,2"],
-          "hints": [
-            "HINT 1: The magic sum is 15. In Row 1: 8 + A + 6 = 15 -> A = 1.",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "RUMBLE! As you enter 1-3-2, stone tiles A, B, and C lock into place with a heavy click! The floor traps disengage!",
+	  "question_pool": [
+		{
+		  "variant_id": "square_132",
+		  "flavor_text": "You step onto a mystical 3x3 stone floor. Runes on the border state: 'Every row, column, and diagonal must equal 15.' Grid:\n[8] [A] [6]\n[B] [5] [7]\n[4] [9] [C]",
+		  "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
+		  "accepted_answers": ["132", "1 3 2", "1, 3, 2", "1,3,2"],
+		  "hints": [
+			"HINT 1: The magic sum is 15. In Row 1: 8 + A + 6 = 15 -> A = 1.",
             "HINT 2: Row 2: B + 5 + 7 = 15 -> B = 3. Row 3: 4 + 9 + C = 15 -> C = 2. Enter: 132."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "RUMBLE! Entering 1-3-2 locks the stone tiles in place and disables the floor traps!"
-        },
-        {
-          "variant_id": "square_231",
-          "flavor_text": "The floor tiles form a sacred Lo Shu magic square with sum 15. Grid:\n[4] [9] [A]\n[B] [5] [7]\n[8] [C] [6]",
-          "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
-          "accepted_answers": ["231", "2 3 1", "2, 3, 1", "2,3,1"],
-          "hints": [
-            "HINT 1: Every line sums to 15. Row 1: 4 + 9 + A = 15 -> A = 2.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "RUMBLE! Entering 1-3-2 locks the stone tiles in place and disables the floor traps!"
+		},
+		{
+		  "variant_id": "square_231",
+		  "flavor_text": "The floor tiles form a sacred Lo Shu magic square with sum 15. Grid:\n[4] [9] [A]\n[B] [5] [7]\n[8] [C] [6]",
+		  "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
+		  "accepted_answers": ["231", "2 3 1", "2, 3, 1", "2,3,1"],
+		  "hints": [
+			"HINT 1: Every line sums to 15. Row 1: 4 + 9 + A = 15 -> A = 2.",
             "HINT 2: Row 2: B + 5 + 7 = 15 -> B = 3. Row 3: 8 + C + 6 = 15 -> C = 1. Enter: 231."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "RUMBLE! Code 2-3-1 resonates through the tiles! The traps disarm and the final archway rises!"
-        },
-        {
-          "variant_id": "square_798",
-          "flavor_text": "Glowing runes illuminate a 3x3 mathematical floor mosaic with sum 15. Grid:\n[6] [A] [2]\n[1] [5] [B]\n[C] [3] [4]",
-          "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
-          "accepted_answers": ["798", "7 9 8", "7, 9, 8", "7,9,8"],
-          "hints": [
-            "HINT 1: Row 1 sums to 15: 6 + A + 2 = 15 -> A = 7.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "RUMBLE! Code 2-3-1 resonates through the tiles! The traps disarm and the final archway rises!"
+		},
+		{
+		  "variant_id": "square_798",
+		  "flavor_text": "Glowing runes illuminate a 3x3 mathematical floor mosaic with sum 15. Grid:\n[6] [A] [2]\n[1] [5] [B]\n[C] [3] [4]",
+		  "puzzle_text": "Deduce the missing numbers on tiles [A], [B], and [C]. Enter the 3-digit code [A][B][C] to disengage the floor traps:",
+		  "accepted_answers": ["798", "7 9 8", "7, 9, 8", "7,9,8"],
+		  "hints": [
+			"HINT 1: Row 1 sums to 15: 6 + A + 2 = 15 -> A = 7.",
             "HINT 2: Row 2: 1 + 5 + B = 15 -> B = 9. Row 3: C + 3 + 4 = 15 -> C = 8. Enter: 798."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "RUMBLE! 7-9-8 is accepted! The floor tiles align and the path to the vault door opens!"
-        }
-      ]
-    },
-    {
-      "id": "stage_6",
-      "title": "THE ARCHIVE EXIT DOOR",
-      "image": "door_lock_gb.png",
-      "flavor_text": "You stand before the massive reinforced vault exit door. An intricate combination dial bars the final exit.",
-      "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 10 and 25?",
-      "accepted_answers": ["83"],
-      "hints": [
-        "HINT 1: Identify primes between 10 and 25: 11, 13, 17, 19, 23.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "RUMBLE! 7-9-8 is accepted! The floor tiles align and the path to the vault door opens!"
+		}
+	  ]
+	},
+	{
+	  "id": "stage_6",
+	  "title": "THE ARCHIVE EXIT DOOR",
+	  "image": "door_lock_gb.png",
+	  "flavor_text": "You stand before the massive reinforced vault exit door. An intricate combination dial bars the final exit.",
+	  "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 10 and 25?",
+	  "accepted_answers": ["83"],
+	  "hints": [
+		"HINT 1: Identify primes between 10 and 25: 11, 13, 17, 19, 23.",
         "HINT 2: Compute 11 + 13 + 17 + 19 + 23 = 83."
-      ],
-      "penalty_seconds": 30,
-      "solved_text": "CLANK! The vault door combination lock releases! The heavy steel bolts retract, the door swings open, and you have escaped the Vault of Newton!",
-      "question_pool": [
-        {
-          "variant_id": "primes_10_25",
-          "flavor_text": "You stand before the massive reinforced vault exit door. An intricate combination dial bars the final exit.",
-          "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 10 and 25?",
-          "accepted_answers": ["83"],
-          "hints": [
-            "HINT 1: Identify primes between 10 and 25: 11, 13, 17, 19, 23.",
+	  ],
+	  "penalty_seconds": 30,
+	  "solved_text": "CLANK! The vault door combination lock releases! The heavy steel bolts retract, the door swings open, and you have escaped the Vault of Newton!",
+	  "question_pool": [
+		{
+		  "variant_id": "primes_10_25",
+		  "flavor_text": "You stand before the massive reinforced vault exit door. An intricate combination dial bars the final exit.",
+		  "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 10 and 25?",
+		  "accepted_answers": ["83"],
+		  "hints": [
+			"HINT 1: Identify primes between 10 and 25: 11, 13, 17, 19, 23.",
             "HINT 2: Compute 11 + 13 + 17 + 19 + 23 = 83."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANK! The vault door combination lock releases! The heavy steel bolts retract, the door swings open, and you have escaped the Vault of Newton!"
-        },
-        {
-          "variant_id": "primes_25_45",
-          "flavor_text": "Before the towering steel vault door, an engraving specifies a prime summation key:",
-          "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 25 and 45?",
-          "accepted_answers": ["181"],
-          "hints": [
-            "HINT 1: Identify primes between 25 and 45: 29, 31, 37, 41, 43.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANK! The vault door combination lock releases! The heavy steel bolts retract, the door swings open, and you have escaped the Vault of Newton!"
+		},
+		{
+		  "variant_id": "primes_25_45",
+		  "flavor_text": "Before the towering steel vault door, an engraving specifies a prime summation key:",
+		  "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 25 and 45?",
+		  "accepted_answers": ["181"],
+		  "hints": [
+			"HINT 1: Identify primes between 25 and 45: 29, 31, 37, 41, 43.",
             "HINT 2: Compute 29 + 31 + 37 + 41 + 43 = 181."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANK! Combination 181 accepted! The concentric steel gears rotate and the massive vault door unseals!"
-        },
-        {
-          "variant_id": "primes_30_50",
-          "flavor_text": "The massive vault dial is locked by a higher-order prime verification code:",
-          "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 30 and 50?",
-          "accepted_answers": ["199"],
-          "hints": [
-            "HINT 1: Identify primes between 30 and 50: 31, 37, 41, 43, 47.",
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANK! Combination 181 accepted! The concentric steel gears rotate and the massive vault door unseals!"
+		},
+		{
+		  "variant_id": "primes_30_50",
+		  "flavor_text": "The massive vault dial is locked by a higher-order prime verification code:",
+		  "puzzle_text": "FINAL CHALLENGE: What is the sum of all prime numbers between 30 and 50?",
+		  "accepted_answers": ["199"],
+		  "hints": [
+			"HINT 1: Identify primes between 30 and 50: 31, 37, 41, 43, 47.",
             "HINT 2: Compute 31 + 37 + 41 + 43 + 47 = 199."
-          ],
-          "penalty_seconds": 30,
-          "solved_text": "CLANK! 199 engages the final tumblers! The heavy locking bolts slide back and the exit opens!"
-        }
-      ]
-    }
+		  ],
+		  "penalty_seconds": 30,
+		  "solved_text": "CLANK! 199 engages the final tumblers! The heavy locking bolts slide back and the exit opens!"
+		}
+	  ]
+	}
   ],
   "victory_screen": {
-    "speaker": "THE PROFESSOR",
-    "title": "ENRAGED CONCESSION",
-    "image": "professor_angry_gb.png",
-    "dialogue": "WHAT?! IMPOSSIBLE! You solved the primes and breached my vault?! How dare you unravel my masterpieces so effortlessly! Do not celebrate so quickly, scholars... This was merely an appetizer. I will return with an even more devious, insurmountable challenge! Next time, you shall not escape!"
+	"speaker": "THE PROFESSOR",
+	"title": "ENRAGED CONCESSION",
+	"image": "professor_angry_gb.png",
+	"dialogue": "WHAT?! IMPOSSIBLE! You solved the primes and breached my vault?! How dare you unravel my masterpieces so effortlessly! Do not celebrate so quickly, scholars... This was merely an appetizer. I will return with an even more devious, insurmountable challenge! Next time, you shall not escape!"
   },
   "game_over_screen": {
-    "speaker": "THE PROFESSOR",
-    "title": "GLOATING TRIUMPH",
-    "image": "professor_gloating_gb.png",
-    "dialogue": "BWAHAHAHA! The countdown reaches zero! The heavy iron bolts slam shut forever! Did you truly believe your elementary minds could defeat my grand designs? You simply were not talented enough to defeat my challenges! The archives are sealed, and you remain trapped!"
+	"speaker": "THE PROFESSOR",
+	"title": "GLOATING TRIUMPH",
+	"image": "professor_gloating_gb.png",
+	"dialogue": "BWAHAHAHA! The countdown reaches zero! The heavy iron bolts slam shut forever! Did you truly believe your elementary minds could defeat my grand designs? You simply were not talented enough to defeat my challenges! The archives are sealed, and you remain trapped!"
   }
 }
