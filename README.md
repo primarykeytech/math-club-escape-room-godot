@@ -1,7 +1,8 @@
 # Math Club Escape Room (The Vault of Newton)
 
-A modern mathematical escape room game built with **Godot 4**. Designed with atmospheric 16:9 widescreen concept art, dynamic puzzle pools for high replayability, responsive UI theming, native sound design, and a robust answer-validation engine. Originally 
-designed as an in-classroom challenge with padlocks and chests, this is the digital version of that game.
+![Math Club: The Vault of Newton](assets/images/thumbnail.png)
+
+A modern mathematical escape room game built with **Godot 4**. Designed with atmospheric 16:9 widescreen concept art, dynamic puzzle pools for high replayability, responsive UI theming, native sound design, and a robust answer-validation engine. Originally designed as an in-classroom challenge with padlocks and chests, this is the digital version of that game.
 
 ---
 
