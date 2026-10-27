@@ -67,8 +67,8 @@ godot --path "/path/to/math-club-escape-room-godot"
 ## Key Features
 
 * **High-Resolution Widescreen Art (16:9)**: Atmospheric digital illustrations for all chambers, desks, balance scales, mosaics, vault doors, and The Professor.
-* **Dynamic Puzzle Database & Replayability**: Decoupled in [`data/escape_room.json`](data/escape_room.json) with 18 distinct challenge variants across 6 stages. Each playthrough randomly selects a fresh variant per stage.
-* **Synchronized Cipher Artwork**: Stage 3 automatically synchronizes the visual parchment illustration with the chosen cipher shift and message (`XJJP YMJ AFZQY ITTW`, `ATRUIQ ZNK INGSHKX`, or `YLCLHS AOL HYJOPCL`).
+* **Dynamic Puzzle Database & Replayability**: Decoupled in [`data/escape_room.json`](data/escape_room.json) with **30 distinct challenge variants** across 6 stages (5 unique variants per stage, creating 15,625 distinct playthrough combinations). Each playthrough randomly selects a fresh variant per stage.
+* **Synchronized Cipher Artwork**: Stage 3 dynamically synchronizes the visual parchment illustration with the chosen cipher shift and message (`shift 5`: `XJJP YMJ AFZQY ITTW`, `shift 6`: `ATRUIQ ZNK INGSHKX`, `shift 7`: `YLCLHS AOL HYJOPCL`, `shift 4`: `FILSPH XLI WIGVIX`, or `shift 3`: `IROORZ WKH QXPEHUV`).
 * **Robust Answer Validation**: GDScript regex normalization engine handles case insensitivity, spacing variations, punctuation stripping, and word equivalencies (e.g., `"15 2"` matches `"15 pencils and 2 pens"`).
 * **Countdown Timer & Penalties**: 30-minute default vault timer with dynamic 30-second deductions, screen shake, and red alert flashes on wrong guesses.
 * **Audio & Music Pipeline**: Looping menacing soundtrack in D minor on briefing and closing screens, with responsive sound effects for keystrokes, submit clicks, error buzzers, and victory fanfares.

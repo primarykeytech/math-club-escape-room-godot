@@ -167,7 +167,7 @@ func _init() -> void:
 	for i in range(data.get_total_stages()):
 		var pool := data.get_stage_question_pool(i)
 		total_variants += pool.size()
-		if pool.size() < 3:
+		if pool.size() < 5:
 			all_pools_valid = false
 			print("  FAIL: Stage %d has only %d question variants" % [i + 1, pool.size()])
 		for v in pool:
@@ -175,8 +175,8 @@ func _init() -> void:
 				all_pools_valid = false
 				print("  FAIL: Stage %d variant has missing puzzle_text or accepted_answers" % [i + 1])
 
-	if all_pools_valid:
-		print("  PASS: All 6 stages have at least 3 question variants (Total %d questions in database)." % total_variants)
+	if all_pools_valid and total_variants == 30:
+		print("  PASS: All 6 stages have 5 question variants (Total %d questions in database)." % total_variants)
 		tests_passed += 1
 	else:
 		tests_failed += 1
